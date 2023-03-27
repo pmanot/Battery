@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "Battery",
+    platforms: [
+        .iOS(.v14), .macOS(.v10_14), .macCatalyst(.v14)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -21,8 +24,6 @@ let package = Package(
         .target(
             name: "Battery",
             dependencies: []),
-        .testTarget(
-            name: "BatteryTests",
-            dependencies: ["Battery"]),
     ]
 )
+
