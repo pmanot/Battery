@@ -94,11 +94,12 @@ public final class Battery: ObservableObject {
     }
     #endif
     
+    #if os(macOS)
     deinit {
         let successBool = self.closeServiceConnection()
         print("deallocated \(successBool ? "succesfully" : "unsuccesfully")")
-        
     }
+    #endif
     
     #if os(macOS)
     static public func getPowerSource() -> PowerSource {
