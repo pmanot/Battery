@@ -8,8 +8,7 @@ A lightweight multi-platform framework for accessing battery info
 * Multi-platform support
 
 ## Installation
-The Unified Battery Framework can be installed using Swift Package Manager. Simply add the following line to your Package.swift file:
-
+Battery can be installed using Swift Package Manager. Simply add the following line to your Package.swift file: 
 ```
 dependencies: [
     .package(url: "https://github.com/<username>/<reponame>.git", from: "1.0.0")
@@ -17,13 +16,13 @@ dependencies: [
 ```
 
 ## Usage
-To use the Unified Battery Framework, first, import the module:
+To use the Unified Battery Framework, first, import the module: 
 
 ```
 import Battery
 ```
 
-Then, create an instance of the Battery class:
+Then, create an instance of the Battery class: 
 
 ```
 let battery = Battery()
