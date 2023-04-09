@@ -8,15 +8,10 @@ A lightweight multi-platform framework for accessing battery info
 * Multi-platform support
 
 ## Installation
-Battery can be installed using Swift Package Manager. Simply add the following line to your Package.swift file: 
-```
-dependencies: [
-    .package(url: "https://github.com/<username>/<reponame>.git", from: "1.0.0")
-]
-```
+You can add the Battery framework to your project via Swift Package Manager. Simply go to File > Swift Packages > Add Package Dependency and enter the following URL: https://github.com/pmanot/Battery.
 
 ## Usage
-To use the Unified Battery Framework, first, import the module: 
+To use Battery, first, import the module: 
 
 ```
 import Battery
