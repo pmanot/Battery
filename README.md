@@ -24,17 +24,19 @@ let battery = Battery()
 ```
 
 ```
+var cancellables: [AnyCancellable] = []
+
 battery.$percentage.sink { percentage in
     print("Battery percentage: \(percentage)")
-}
+}.store(in: &cancellables)
 
 battery.$state.sink { state in
     print("Battery state: \(state)")
-}
+}.store(in: &cancellables)
 
 battery.$isLowPowerModeEnabled.sink { isEnabled in
     print("Low power mode enabled: \(isEnabled)")
-}
+}.store(in: &cancellables)
 ```
 
 ## API
