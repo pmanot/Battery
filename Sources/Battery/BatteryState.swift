@@ -1,15 +1,9 @@
-//
-//  BatteryState.swift
-//  
-//
-//  Created by Purav Manot on 27/03/23.
-//
-
 import Foundation
 
+// An enumeration representing the possible battery states.
 public enum BatteryState: String, Codable {
-    case chargedAndPlugged = "Charged & Plugged"
-    case charging = "Charging"
-    case discharging = "Discharging"
-    case unknown = "Unknown"
+    case chargedAndPlugged = "Charged & Plugged" // The battery is fully charged and the device is plugged in.
+    case charging = "Charging" // The battery is currently charging.
+    case discharging = "Discharging" // The battery is currently discharging.
+    case unknown = "Unknown" // The battery state is unknown.
 }
