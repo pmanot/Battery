@@ -220,7 +220,7 @@ public final class Battery: ObservableObject {
     static private func getPowerSourceProperty(forKey key: BatteryRegistryPropertyKey) -> Any? {
         let psInfo = IOPSCopyPowerSourcesInfo().takeRetainedValue()
         let psList = IOPSCopyPowerSourcesList(psInfo).takeRetainedValue() as? [CFDictionary]
-        guard let powerSources = psList else {
+        guard let powerSources = psList, !powerSources.isEmpty else {
             return nil
         }
         let powerSource = powerSources[0] as NSDictionary
