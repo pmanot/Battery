@@ -213,7 +213,7 @@ public final class Battery: ObservableObject {
 
     // A method that retrieves a registry entry for a given property key.
     private func getRegistryProperty(forKey key: BatteryRegistryPropertyKey) -> Any? {
-        IORegistryEntryCreateCFProperty(service, key.rawValue as CFString?, nil, 0).takeRetainedValue()
+        IORegistryEntryCreateCFProperty(service, key.rawValue as CFString?, nil, 0)?.takeRetainedValue()
     }
 
     // A static method that retrieves a power source entry for a given property key.
