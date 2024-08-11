@@ -107,7 +107,7 @@ public final class Battery: ObservableObject {
                 .compactMap { [weak self] _ in self?.getState() }
                 .assign(to: &$state)
         } catch {
-            fatalError("Error opening connection, cannot fetch battery details")
+            print("Error opening connection, cannot fetch battery details")
         }
     }
 #endif
