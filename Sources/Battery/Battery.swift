@@ -213,14 +213,14 @@ public final class Battery: ObservableObject {
 
     // A method that retrieves a registry entry for a given property key.
     private func getRegistryProperty(forKey key: BatteryRegistryPropertyKey) -> Any? {
-        IORegistryEntryCreateCFProperty(service, key.rawValue as CFString?, nil, 0).takeRetainedValue()
+        IORegistryEntryCreateCFProperty(service, key.rawValue as CFString?, nil, 0)?.takeRetainedValue()
     }
 
     // A static method that retrieves a power source entry for a given property key.
     static private func getPowerSourceProperty(forKey key: BatteryRegistryPropertyKey) -> Any? {
         let psInfo = IOPSCopyPowerSourcesInfo().takeRetainedValue()
         let psList = IOPSCopyPowerSourcesList(psInfo).takeRetainedValue() as? [CFDictionary]
-        guard let powerSources = psList else {
+        guard let powerSources = psList, !powerSources.isEmpty else {
             return nil
         }
         let powerSource = powerSources[0] as NSDictionary
